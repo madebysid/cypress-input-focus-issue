@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Cypress</title>
+  </head>
+
+  <body>
+    <button onclick="onClick()">Show input</button>
+
+    <script>
+      function onClick() {
+        let input = document.createElement('input')
+        input.type = 'number' // The type has to be a `number` for the test to fail
+        input.value = 1
+
+        document.body.appendChild(input)
+
+        document.querySelector('input').focus() // The input needs to be forcibly focused for the test to fail
+      }
+    </script>
+  </body>
+</html>
